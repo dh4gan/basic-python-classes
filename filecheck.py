@@ -2,7 +2,7 @@
 # Simple script to demonstrate files, functions and exceptions
 # This script uses the standard IO that comes with Python
 # Other modules contain their own IO methods, and are generally preferable
-# See next exercise on objects
+# See next exercise
 
 
 title='Files, Functions and Exceptions Code'

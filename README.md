@@ -15,7 +15,8 @@ The scripts are best considered in the following order:
 2. counter.py - a script showing you how to use if statements and loops, and how to import a module
 3. sequences.py - a script showing you how to manipulate datasets (lists, tuples, strings and dictionaries)
 4. filecheck.py - a script showing basic file reading and writing, as well as exceptions (i.e. how to catch your own mistakes)
-5.  flocking.py - a script that runs a flocking simulation, using object oriented programming (objects defined in boid.py and vector.py)
+5. plotting.py - a script showing how to use numpy and matplotlib to read data and make plots
+6. flocking.py - a script that runs a flocking simulation, using object oriented programming (objects defined in boid.py and vector.py)
 
-This should be enough to begin basic Python programming.  It's definitely worth checking out the numpy and matplotlib modules to find all sorts of functions that you'll never have to write to do all kinds of scientific programming.
+This should be enough to begin basic Python programming.  It's definitely worth checking out the numpy and matplotlib modules to find all sorts of functions (that you'll never have to write yourself!) to do all kinds of scientific programming.
 
