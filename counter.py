@@ -4,7 +4,7 @@
 # computed both analytically and by brute force
 
 from math import pow  # This statement imports only one function from math
-# We can use the function by typing pow(number)
+# We can use the function by typing pow(number,exponent)
 # If we typed
 # import math
 

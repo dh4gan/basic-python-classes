@@ -73,7 +73,7 @@ text_file.close()
 
 text_file = open("myfile.txt","r")
 
-# This command reads 15 characters
+# This command reads 5 characters
 excerpt = text_file.read(5)
 print 'Excerpt: ',excerpt
 
@@ -85,7 +85,7 @@ text_file.close()
  
 # or read all the lines into a list (in string format)
 
-data_file = open("mydata.dat","r")
+data_file = open("myfile.txt","r")
 
 data = data_file.readlines()
 
@@ -105,8 +105,8 @@ print ''
 
 # Try running the script with different options for mystery file
 #mysteryfile = 'mystery.txt'
-#mysteryfile = 3.0
-mysteryfile = 'mydata.dat'
+mysteryfile = 3.0
+#mysteryfile = 'mydata.dat'
 
 try:
     mystery_file=open(mysteryfile,"r")
