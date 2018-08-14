@@ -1,6 +1,6 @@
 import math
 
-class Three(object):
+class Vector3D(object):
     """3D cartesian vector object for dynamics"""
 # Initialising Function
     def __init__(self,x,y,z):
@@ -16,17 +16,17 @@ class Three(object):
             
     def add(self,other):
         """ Adds another vector"""
-        return Three (self.x + other.x, self.y + other.y, self.z + other.z)
+        return Vector3D (self.x + other.x, self.y + other.y, self.z + other.z)
             
 # Vector subtraction
             
     def subtract(self,other):
         """ Subtracts another vector"""
-        return Three (self.x - other.x, self.y - other.y, self.z - other.z)
+        return Vector3D (self.x - other.x, self.y - other.y, self.z - other.z)
             
     def scalarmult(self, num):
         """ Multiplies vector by scalar"""
-        return Three(num*self.x, num*self.y,num*self.z)
+        return Vector3D (num*self.x, num*self.y,num*self.z)
 
 # Magnitude of the Vector
     

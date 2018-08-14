@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 # Match velocities with the centre of mass of the system
 # Try not to hit other boids - move away from boids if they come within a certain distance
 
+# First, let's define a simple function to get x,y data from our boids
 def get_coords(boidlist):
     '''This function strips out x and y data from a list of boid objects for plotting'''
     x=[]
@@ -38,13 +39,13 @@ screensize = 100.0 # This will determine the size of the plotting window
 dx = boxsize/(nboid)
 dt = 0.5
 
-flocktwo = vector.Three(20.0, 0.0, 0.0)
+flocktwo = vector.Vector3D(20.0, 0.0, 0.0)
 
 for j in range(nboid):
 
     # set up random positions and velocities
-    r = vector.Three(np.random.rand()*boxsize,np.random.rand()*boxsize,np.random.rand()*boxsize) # Place boids at random in a box
-    v = vector.Three(-2.0 + 4.0*np.random.rand(),-1.0+ 2.0*np.random.rand(),-1.0+2.0*np.random.rand()) # Give them random velocities
+    r = vector.Vector3D(np.random.rand()*boxsize,np.random.rand()*boxsize,np.random.rand()*boxsize) # Place boids at random in a box
+    v = vector.Vector3D(-2.0 + 4.0*np.random.rand(),-1.0+ 2.0*np.random.rand(),-1.0+2.0*np.random.rand()) # Give them random velocities
 
     # create new boid object and add to list
     d = boid.Boid(j,r,v,v,1.0)
@@ -66,15 +67,15 @@ plt.show()
                 
 t = 0
 
-obstacle = vector.Three(0.0,-10.0,0.0)
+obstacle = vector.Vector3D(0.0,-10.0,0.0)
 flockcounter = 0
 
 while t<tmax:
     flockcounter+=1
     # Calculate centre of mass and COM velocity
         
-    com = vector.Three(0.0,0.0,0.0)
-    vcom = vector.Three(0.0,0.0,0.0)
+    com = vector.Vector3D(0.0,0.0,0.0)
+    vcom = vector.Vector3D(0.0,0.0,0.0)
 
     for j in range(nboid):    
         com = com.add(popn[j].r)
@@ -85,7 +86,7 @@ while t<tmax:
     com = com.scalarmult(1.0/nboid)
     vcom = vcom.scalarmult(1.0/nboid)    
 
-    origin = vector.Three(0.0,0.0,0.0)
+    origin = vector.Vector3D(0.0,0.0,0.0)
 
     # Apply flocking rules
     for j in range(nboid):        
