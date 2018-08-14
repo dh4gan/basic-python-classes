@@ -1,3 +1,6 @@
+# A Basic Introduction to Python 2.7
+
+
 *This repo is a collection of Python scripts designed to teach the basics of the language.*
 
 Provided that python is installed on your machine, you should be able to run any of these scripts by typing
@@ -16,7 +19,7 @@ The scripts are best considered in the following order:
 3. `sequences.py` - a script showing you how to manipulate datasets (lists, tuples, strings and dictionaries)
 4. `filecheck.py` - a script showing basic file reading and writing, as well as exceptions (i.e. how to catch your own mistakes)
 5. `plotting.py` - a script showing how to use `numpy` and `matplotlib` to read data and make plots
-6. `flocking.py` - a script that runs a flocking simulation, using object oriented programming (objects defined in boid.py and vector.py)
+6. `flocking.py` - a script that runs a flocking simulation, using object oriented programming (objects defined in `boid.py` and `vector.py`)
 
 This should be enough to begin basic Python programming.  It's definitely worth checking out the `numpy` and `matplotlib` modules to find all sorts of functions (that you'll never have to write yourself!) to do all kinds of scientific programming.
 
