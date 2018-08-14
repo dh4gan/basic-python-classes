@@ -54,23 +54,23 @@ for j in range(nboid):
 # Extract x and y coords for plotting
 xplot,yplot = get_coords(popn)
 
-# Plot them using matplotlib 
-plt.ion() # This switches on interactive mode, so we can keep plotting on the same figure
-
 fig1 = plt.figure() # This is the figure object
 ax = fig1.add_subplot(111) # This is the axes of our figure (we can add several to make multiple plots)
 ax.set_xlim(-screensize, screensize) # x and y limits of the screen
 ax.set_ylim(-screensize, screensize)
 scat = ax.scatter(xplot,yplot) # This plots a series of disconnected points (i.e. our boids)
 
+plt.show()
+
 # Now begin simulation
                 
 t = 0
 
 obstacle = vector.Three(0.0,-10.0,0.0)
+flockcounter = 0
 
 while t<tmax:
-        
+    flockcounter+=1
     # Calculate centre of mass and COM velocity
         
     com = vector.Three(0.0,0.0,0.0)
@@ -86,6 +86,7 @@ while t<tmax:
     vcom = vcom.scalarmult(1.0/nboid)    
 
     origin = vector.Three(0.0,0.0,0.0)
+
     # Apply flocking rules
     for j in range(nboid):        
         
@@ -112,13 +113,15 @@ while t<tmax:
     # Get coordinates for new population
     xplot,yplot = get_coords(popn)
 
-    # plot
+    # plot and save to file
     ax.clear() # clear previous plot
     ax.set_xlim(-screensize,screensize) # reset plot limits
     ax.set_ylim(-screensize,screensize)
     scat = ax.scatter(xplot,yplot) # Make another scatter plot
 
-    plt.draw() # Draw it to the figure on screen
+    outputfile='flock_'+str(flockcounter).zfill(4)+'.png'
+    fig1.savefig(outputfile)
+    print outputfile, 'written'
 
     # advance time
     t = t+ dt
