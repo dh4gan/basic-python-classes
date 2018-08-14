@@ -1,8 +1,10 @@
 # Written by Duncan Forgan, 24/02/14
+#
 # Simple script to demonstrate plotting of data in files
 # This uses the numpy and matplotlib modules, which are
 # extremely popular, and basically all you need to do 
 # scientific computing in Python
+#
 
 # This code recreates the now-viral "Internet Explorer Use vs Murder Rate"
 # plot that has been circling the internet
@@ -22,15 +24,13 @@ print 4*bar
 print ''
 
 # Let's define the filename for reading
-
 inputfile='mydata.dat'
 
 # numpy allows you to read datafiles very quickly
-
-inputdata = np.genfromtxt(inputfile, skiprows=1)
+inputdata = np.genfromtxt(inputfile, skip_header=1)
 
 # This makes an array with rows and columns equal to the rows and columns of the file
-# The skiprows bit is optional, but lets you miss out a row if the file has a header
+# The skip_header bit is optional, but lets you miss out a row if the file has a header
 # (which this one does)
 
 # To make the code clearer, we'll peel off the individual columns
@@ -80,7 +80,7 @@ print headers
 # First y axis - IE usage
 # Second y axis- US murder rate
 
-myfigure = plt.figure() # This is completely empty! No axes or anything
+myfigure = plt.figure(figsize=(10,8)) # This is completely empty! No axes or anything
 myfigure.suptitle("Internet Explorer Use vs US Murder Rate") # Gives the figure a title
 ax = myfigure.add_subplot(111) # This adds an empty set of axes to the figure
 
@@ -95,7 +95,9 @@ ax.set_ylabel(headers[1]) # Label the y axis
 ax.plot(inputdata[:,0], inputdata[:,1], color = 'green') # Plots a simple line
 ax.scatter(inputdata[:,0], inputdata[:,1], color='green', marker='*', s = 100) # Plots scatter points on the line
 
+#
 # This command lets us create a new axis that uses the same x-axis as "ax" 
+#
 ax2 = ax.twinx()
 ax2.set_ylabel(headers[2]) # Set its label
 ax2.set_ylim(murdermin,murdermax) # Set its limits

@@ -49,17 +49,17 @@ print search
 # Strings are immutable - you can't change items in the sequence like this command
 # The line in comments below would give an error
 
-#title[2:5] = 'fart'
+#title[2:5] = 'blerg'
 
-# This is what the error would look likes
+# This is what the error would look like
 #Traceback (most recent call last):
-#  File "/Users/dhf/Programs/python/sequences/sequences.py", line 48, in <module>
-#    title[2:5] = 'fart'
+#  File "sequences.py", line 48, in <module>
+#    title[2:5] = 'blerg'
 #TypeError: 'str' object does not support item assignment
 
 # However, adding new items and extending the sequence via concatenation is fine
 
-title = title[0:2] +"_fart_"+title[2:]
+title = title[0:2] +"_blerg_"+title[2:]
 print title
 
 # Now on to lists and tuples

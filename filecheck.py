@@ -8,8 +8,10 @@
 title='Files, Functions and Exceptions Code'
 bar = '-------'
 
+print 4*bar
 print title
 print 4*bar
+print ''
 print ''
 
 
@@ -20,14 +22,14 @@ print ''
 # Let's start by defining some functions first
 
 def factorial(n):
-    "Computes the Factorial of n"  # This is a docstring (http://en.wikipedia.org/wiki/Docstring#Python)
+    '''Computes the Factorial of n'''  # This is a docstring (http://en.wikipedia.org/wiki/Docstring#Python)
     result = 1
     for i in range(n):
         result = result*(i+1)         
     return result
 
 def fib2(n=10): 
-    "Return a list containing the Fibonacci series up to n"
+    '''Return a list containing the Fibonacci series up to n'''
     result = []
     a, b = 0, 1
     while b < n:
@@ -47,8 +49,9 @@ print 'Second Fibonacci Sequence: ',test3
 
 print ''
 print 'Files'
-print bar
+print 4*bar
 print ''
+
 
 # Open a basic ASCII file for writing
 text_file = open("myfile.txt", "r")
@@ -67,10 +70,12 @@ contents = text_file.read()
 
 print 'Contents:  ', contents
 
+#
 # Or we can just read a few characters
-# Close the file first
-text_file.close()
+#
 
+# Close the file first, then reopen it
+text_file.close()
 text_file = open("myfile.txt","r")
 
 # This command reads 5 characters
@@ -111,11 +116,11 @@ mysteryfile = 3.0
 try:
     mystery_file=open(mysteryfile,"r")
 except IOError as e:
-    print "This error, (",e,") means the file doesn't exist, numbnuts!"
+    print "This error, (",e,") means the file doesn't exist"
     
 except TypeError:
-    print "Use a string for the filename, dumbass!" 
+    print "You entered the wrong variable type for the filename: use a string!"
 else:
     print "You opened the file ",mysteryfile
                     
-print 'Still here'
+print 'Still here after calling the exception'

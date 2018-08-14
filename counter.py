@@ -7,8 +7,8 @@ from math import pow  # This statement imports only one function from math
 # We can use the function by typing pow(number,exponent)
 # If we typed
 # import math
-
 # Then we'd have to use math.pow when we wanted to use the function
+
 
 print '\t \t \t Code for calculating simple series'
 print '\t \t \t ----------------------------------'
@@ -42,9 +42,9 @@ print 'The sum of the arithmetic series is ',result
 # Now the geometric series.  This time we'll use a while loop
 
 print "Now we'll do the geometric series"
-a = raw_input("What is the initial value?")  # note we're using raw_input here
-r = raw_input("What is the multiplying factor?")
-N = input("How many terms?") # Note we're using plain old input here
+a = raw_input("What is the initial value? ")  # note we're using raw_input here
+r = raw_input("What is the multiplying factor? ")
+N = input("How many terms? ") # Note we're using plain old input here
 
 # raw_input delivers strings, whereas input will guess the 
 # variable type from the user's input
